@@ -1,4 +1,0 @@
-Hola 
-soy un archivo 
-de texto plano 
-:p
