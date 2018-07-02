@@ -173,7 +173,7 @@
    juegos, '\n',
  )
 
-})(console.log)
+})(console.log);
 
 /**POO con Prototype Herencia */
 ((c)=>{
@@ -192,4 +192,30 @@
   function Celular(){
     this.tengoCables = false
   }
+
+  //Herencia n.n)/ basada en prototipos
+  Celular.prototype = new Telefono()
+  Celular.prototype.vibrar = function() {
+    c('Vbrrrrrrrr Vbrrrrrrr')
+  }
+
+  function Smartphone () {
+    this.tengoInternet = true
+  }
+
+  Smartphone.prototype = new Celular()
+  Smartphone.prototype.conectar = function(){
+    c('Conectando a Internet....')
+  }
+
+  let g4 = new Smartphone()
+  c(g4)
+  g4.llamar()
+  c(g4.puedoLlamar)
+  g4.vibrar()
+  c(g4.tengoCables)
+  g4.conectar()
+  c(g4.tengoInternet)
+
+  
 })(console.log)
