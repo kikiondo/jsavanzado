@@ -126,7 +126,7 @@ Es independiente del lenguaje, todos los lenguajes tienen implementado json sin 
 
 JS tiene dos metodos:
 
-**JSON.stringify()**: Convierte un valor a cadena de notación JSON.
+**JSON.stringify()**: Convierte un valor a cadena de notación JSON. Convierte todo objeto a cadena de texto
 **JSON.parse()**: Analiza una cadena de texto como JSON.
 
 ### Metodos de ajax
@@ -139,3 +139,8 @@ JS tiene dos metodos:
 * open -> Se necesita saber si es por GET o POST || URL || true(para asincrono)
 
 * eventos -> *readystatechange* cuando hay cambios (se guarda la petición) || funcion a ejecutar
+
+### Eventos
+
+* readystatechange
+* load
