@@ -1,0 +1,23 @@
+{
+  "name": "jsavanzado",
+  "version": "1.0.0",
+  "description": "Son ejemplo de ajax",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"browser-sync start --server --files 03-ajax --serveStatic 03-ajax --reload-delay=300 --reload-debounce=500"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kikiondo/jsavanzado.git"
+  },
+  "author": "Carlos Vera <cvera@ucol.mx>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kikiondo/jsavanzado/issues"
+  },
+  "homepage": "https://github.com/kikiondo/jsavanzado#readme",
+  "dependencies": {
+    "browser-sync": "^2.24.5"
+  }
+}
