@@ -55,3 +55,123 @@ Se centra en el uso de **expresiones** para describir la lógica de un programa 
 De esta forma obtendremos un código de primer nivel encargado de ir expresando qué necesita hacer.
 
 Las funciones el lenguaje nos las da, o incluso las podemos construir c:
+
+<hr>
+
+## Funciones puras
+
+Son funciones que se declaran con matematica pura y se basa en construir codigo inmutable.
+
+Cuando un valor entra a una funcion ya no tenga manera de cambiar.
+
+Se caracterizan por dos cosas: 
+
+* Depender sólo de los parámetros de entrada proporcionados y no de ningún estado externo a la función que podría cambiar durante la evaluación o entre llamadas.
+
+* No inflije cambios más allá de sus ámbito. Por lo tanto, no tiene que modificar estados globales, ni estados que han pasado por referencia.
+
+**Nos Ayuda**:
+
+Nos ayuda a cometer menos errores y a verificar en todo momento como es el estado antes y después de ejecutar la función.
+
+Evitar este tipo de uso, hará que nuestro código sea más robusto y fácil de testear.
+
+**Casos que prdrían causar efectos secundarios:**
+
+* Cambiar una variable u objeto global.
+* Cambiar el valor original del argumento de una función (valores por defecto en una función).
+* Procesar datos de entrada del usuario.
+* Lanzar excepciones. (try catch)
+* Mostrar datos por pantalla.
+* Consultar el DOM, las cookies o una base de datos.
+
+Muchos de estos efectos secundarios no se pueden evitar, al acceder a aplicaciones reales. Sin embargo, la PF nos ayudará a delimitar y detectar estos casos para que produzcan el menor daño posible.
+
+<hr>
+
+## Tranparencia referencial
+
+Es una característica basica de las funciones puras, no depende de factores externos.
+
+Una función es **referencialmente transparente** si de manera consistente devuelve los mismo resultados con los mismos datos de entrada.
+
+Si recibo una cadena, devuelvo una cadena :1 !!!!
+
+Si la función depende de estados externos, es complicado que dado unos valores de entrada, siempre devuelva los mismos resultados de salida ya que en el camino, todas esas dependencias pueden cambiar el comportamiento de la funcions
+
+<hr>
+
+## Inmutabilidad
+
+El mayor número de errores en una apliación se produce por un mal control de estos estados.
+
+Que un estado pueda cambiar puede hacer que no obtengamos lo esperado
+
+Por lo tanto controlar los cambios de estados en elas aplicaciones es primordial.
+
+Lo  único que podemos hacer es reducir el número de estados a los indispensables e intentar que sean inmutables.
+
+**Tipos inmutables**
+
+En JavaScript los tipos simples como String, Number o Boolean son tipos inmutables. Cuando se modifica un estado se genera una nueva referencia del dato en memoria.
+
+Sin embargo, los Arrays y los Objetos son mutables. La referencia a su memoria siempre es la misma, si modificamos un atributo o un elemento el puntero continua.
+
+**Recursividad**
+
+Es una técnica en programación para solucionar problemas complejos que puedene dividirse en partes más pequeñas e idénticas al problema total pero no menor magnitud. Nos ayuda a controlar el flujo de datos, casos o numero de veces necesarias para el resultado final.
+
+Evita el uso de iteraciones.
+
+Se lleva muy bien con estructuras de datos que partan de un nodo raiz y del que vayan colgando diferentes nodos hijos como los Arreglos y los Objetos.
+
+La composición de todas las soluciones hijas dan el resultado de la solución padre.
+
+1. Un caso base
+2. Un caso recursivo
+
+**Caso Base**
+
+Es el caso al que toda función recursiva tiene que acabar llegando para dar por resuleto el caso más simple del problema que se quiere resolver.
+
+Si no definimos un caso base dentro de nuestra solución recursiva se creará un funciones infinitas.
+
+**Caso Recursivo**
+
+Suele ser una función que es capaz de autoinvocarse
+
+La clave de esta autoinvocación es que los elementos que le pasemos tendrán que ser menores que los del problema padre ya que si no nunca podríamos llegar al caso base.
+
+<hr>
+
+## Metodos funcionales 
+
+<img src="./pf.png">
+
+* Cumplen con todas las características funcionales
+* Son de orden superior
+* Se pueden encadenar
+* Necesita una expresión *lambda =>* 
+* Permiten:
+    
+      Abstraerel control de flujo de la lógica de negocio
+      Evita el uso de bucles e iteraciones
+      Tienen ámbito de bloque  
+
+
+Funciones y objetos 
+
+**PROGRAMACION FUNCIONAL**
+* Aquitecturas centradas en la transformación
+* Variantes funcionales
+* Inmutabilidad
+* Transparencia Referencial (no elementos externos)
+* Compositividad (un problema en pequeños)
+* Arquitecturas dirigidas por flujos de datos (Me interesa el que y no el como)
+
+**PROGRAMCIÓN ORIENTADA A OBJETOS**
+* Puntos de Extensión Polimŕfica (herencia)
+* Arquitecturas centradas en la abstracción
+* Sustentavidad Liskoviana
+* Encapsulación de estado
+* Arquitectura dirigidas por flujo de control

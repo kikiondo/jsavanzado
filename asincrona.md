@@ -119,6 +119,8 @@ Está basado en generación de objetos en js.
 
 Es independiente del lenguaje, todos los lenguajes tienen implementado json sin problema. Está basado en propiedades y valores.
 
+Al enviar datos a un servidor web, los datos deben ser una cadena.
+
 **Caracteristicas**
 
 * Es una alternativa más fácil de usar a XML
