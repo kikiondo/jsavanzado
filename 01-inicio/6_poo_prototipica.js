@@ -1,30 +1,30 @@
 ;//Patron de diseño de las Arrow Functions //Evitas el scope global y manetiene el scope en pedazo de codigo
 
-/**Anidación de objetos */
-((c)=>{
+/** Anidación de objetos */
+((c) => {
   c('**********Anidación de Objetos************')
-  //Objeto literal n.n recuerdalo
+  // Objeto literal n.n recuerdalo
   const curso = {
-      titulo: 'Curso JS Avanzado: Paradigmas de Programación',
-      docente: {
-        nombre: 'Jonathan MirCha',
-        edad: 33,
-        nacionalidad: 'Mexicana',
-        contacto:{ 
-            email: 'jonamircha@gmail.com',
-            url: 'http://jonmircha.com',
-            twitter: '@jonmircha',
-            ubicación: 'CDMX'
-        }
-      },
-      costo: 40,
-      url: 'http:ed.team/cursos/javascript-avanzado',
-      online: true,
-      plataforma: {
-          nombre: 'app.ed.team',
-          url: 'https://app.ed.team',
-          oficinas: [ 'Lima', 'Bogotá', 'Namekusei' ]
+    titulo: 'Curso JS Avanzado: Paradigmas de Programación',
+    docente: {
+      nombre: 'Jonathan MirCha',
+      edad: 33,
+      nacionalidad: 'Mexicana',
+      contacto: {
+        email: 'jonamircha@gmail.com',
+        url: 'http://jonmircha.com',
+        twitter: '@jonmircha',
+        ubicación: 'CDMX'
       }
+    },
+    costo: 40,
+    url: 'http:ed.team/cursos/javascript-avanzado',
+    online: true,
+    plataforma: {
+      nombre: 'app.ed.team',
+      url: 'https://app.ed.team',
+      oficinas: [ 'Lima', 'Bogotá', 'Namekusei' ]
+    }
   }
 
   //Notación de punto
@@ -38,47 +38,46 @@
   c( curso.plataforma['oficinas'][2] )
 })(console.log);
 
-/**POO con Closures */
-((c)=>{
-    c('********POO con Closures*********') 
-    function Carrito (articulo){
-        //Recurso privado (buena practica _)
-        let _articulo = articulo,
-        //Objeto literal n.n 
-            _carrito = {}
+/** POO con Closures */
+((c) => {
+  c('********POO con Closures*********')
+  function Carrito (articulo) {
+    // Recurso privado (buena practica _)
+    let _articulo = articulo
+    let _carrito = {}
 
-        function agregar (articulo, cantidad){
-            _carrito[articulo] = cantidad
-        }
-
-        function quitar (articulo) {
-            //Metodo delete de los objetos
-            delete _carrito[articulo]
-        }
-
-        function ver () {
-            return _carrito
-        }
-
-        return{
-            //En algo que voy a exponer como agregrar, quitar y ver
-            agregar: agregar,
-            quitar: quitar,
-            ver: ver
-        }
+    function agregar (articulo, cantidad) {
+      _carrito[articulo] = cantidad
     }
 
-    //No puedo aplicar new ya que es una función constructora
-    const comics = Carrito('Comics')
-    c(comics)
-    comics.agregar('Flash Pint Paradox', 2)
-    comics.agregar('The Return of the Dark Knigth', 3)
-    comics.agregar('Civil War', 3)
-    comics.agregar('Final Crisis',1)
-    c( comics.ver() )
+    function quitar (articulo) {
+      // Metodo delete de los objetos
+      delete _carrito[articulo]
+    }
+
+    function ver () {
+      return _carrito
+    }
+
+    return {
+      // En algo que voy a exponer como agregrar, quitar y ver
+      agregar: agregar,
+      quitar: quitar,
+      ver: ver
+    }
+  }
+
+  // No puedo aplicar new ya que es una función constructora
+  const comics = Carrito('Comics')
+  c(comics)
+  comics.agregar('Flash Pint Paradox', 2)
+  comics.agregar('The Return of the Dark Knigth', 3)
+  comics.agregar('Civil War', 3)
+  comics.agregar('Final Crisis', 1)
+  c(comics.ver())
 })(console.log);
 
-//POO con funciones constructoras, this es contexto función constructora
+// POO con funciones constructoras, this es contexto función constructora
 ((c) => {
   c('**********POO con Funciones Constructoras*********')
   function Carrito (articulo){
@@ -175,27 +174,27 @@
 
 })(console.log);
 
-/**POO con Prototype Herencia */
-((c)=>{
+/** POO con Prototype Herencia */
+((c) => {
   c('******Herencia Prototipica*******')
 
-  function Telefono(){
+  function Telefono () {
     this.puedoLlamar = true
   }
 
   Telefono.prototype = {
-    llamar(){
+    llamar () {
       c('Riiiiing Riiiing')
     }
   }
 
-  function Celular(){
+  function Celular () {
     this.tengoCables = false
   }
 
-  //Herencia n.n)/ basada en prototipos
+  // Herencia n.n)/ basada en prototipos
   Celular.prototype = new Telefono()
-  Celular.prototype.vibrar = function() {
+  Celular.prototype.vibrar = function () {
     c('Vbrrrrrrrr Vbrrrrrrr')
   }
 
@@ -204,7 +203,7 @@
   }
 
   Smartphone.prototype = new Celular()
-  Smartphone.prototype.conectar = function(){
+  Smartphone.prototype.conectar = function () {
     c('Conectando a Internet....')
   }
 
@@ -216,6 +215,4 @@
   c(g4.tengoCables)
   g4.conectar()
   c(g4.tengoInternet)
-
-  
 })(console.log)
