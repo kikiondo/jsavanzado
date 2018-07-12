@@ -159,9 +159,27 @@ La clave de esta autoinvocación es que los elementos que le pasemos tendrán qu
       Tienen ámbito de bloque  
 
 
-Funciones y objetos 
+Funciones y objetos
 
-**PROGRAMACION FUNCIONAL**
+
+**reduce**: Reune resultados. Se usa como acumulador de resultados, espera una expresión que cuente con un parámetro acumulador y el elemento en el que se encuentra el iterador. Lo que devuelve es el valor acumulado.
+
+Se comporta parecido unn 'GROUP BY' de SQL
+
+**map**: Transforma datos. Recorre un array de elementos y transforma sus datos por medio de una funcion.
+
+Recibe una expresión como parámetro que realiza la transformación.
+
+**filter**: Elimina datos no deseados. Espera una expresión que indique si el elemento en el que se encuentra es deseado o no.
+
+Ideal para hacer búsquedas en un array.
+
+Se comporta parecido a un 'WHERE' de SQL
+
+
+<hr>
+
+## PROGRAMACION FUNCIONAL
 * Aquitecturas centradas en la transformación
 * Variantes funcionales
 * Inmutabilidad
@@ -169,9 +187,25 @@ Funciones y objetos
 * Compositividad (un problema en pequeños)
 * Arquitecturas dirigidas por flujos de datos (Me interesa el que y no el como)
 
-**PROGRAMCIÓN ORIENTADA A OBJETOS**
+## PROGRAMCIÓN ORIENTADA A OBJETOS
 * Puntos de Extensión Polimŕfica (herencia)
 * Arquitecturas centradas en la abstracción
 * Sustentavidad Liskoviana
 * Encapsulación de estado
 * Arquitectura dirigidas por flujo de control
+
+
+**operador corto circuito** es para simplificar el operador ternario
+
+OR - Cuando el valorde la izquierda en la expresión siempre pueda validar a true, es el valor que se cargará por defecto.
+
+AND - cuando el valor de la izquierda en al expresión siempre pueda validar a false, es el valor que se cargará por defecto.
+
+
+## Conclusión
+
+La programación Funcional es un paradigma que usa la sinxis declarativa de funciones puras para que crear programas inmutables que eviten efectos secundarios que sean observados externamente, puede convivir con otros paradigmas como la Orientación a Objetos.
+
+**Cosas en el tintero**
+
+Trnsductores, aridad, tuplas, currificaciones, funtores, combinadores, memorización, mónadas.

@@ -90,7 +90,7 @@
     }
   }
 
-  function* generador() {
+  function* generador () {
     c('Inicio Generator')
     yield cuadrado(0)
     yield cuadrado(1)
