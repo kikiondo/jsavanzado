@@ -1,0 +1,9 @@
+extends includes/layout.pug
+block metatags
+  title= title
+  meta(name="description", content=description)
+block content
+  main.App
+    h1= title
+    p= description
+    img(src="./img/edteam-logo.png")

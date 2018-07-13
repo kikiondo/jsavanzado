@@ -1,0 +1,24 @@
+{
+  "name": "06-workflow-isomorfico",
+  "version": "1.0.0",
+  "description": "Boilerplate Isomórfico con JavaScript",
+  "main": "package.json",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon --watch src -e pug,scss,js,json --exec babel-node server.js"
+  },
+  "author": "Carlos Vera <cvera@ucol.mx>",
+  "license": "MIT",
+  "devDependencies": {
+    "ack-reload": "^2.0.12",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "node-sass-middleware": "^0.11.0",
+    "nodemon": "^1.18.1",
+    "pug": "^2.0.3",
+    "serve-favicon": "^2.5.0"
+  },
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
