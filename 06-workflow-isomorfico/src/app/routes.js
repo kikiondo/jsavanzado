@@ -1,18 +1,18 @@
 import express from 'express'
 
-const routes = express.Router() // De express
+const routes = express.Router()
 
 routes
   .get('/', (req, res, next) => {
     res.render('index', {
-      title: 'Titulo de mi template Home',
-      description: 'Descripción de mi Template Home'
+      title: 'Título de mi template Home',
+      description: 'Descripción de mi template Home'
     })
   })
   .get('/about', (req, res, next) => {
     res.render('index', {
-      title: 'Titulo de mi template About',
-      description: 'Descripción de mi Template Abput'
+      title: 'Título de mi template About',
+      description: 'Descripción de mi template About'
     })
   })
 
