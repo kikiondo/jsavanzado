@@ -1,0 +1,93 @@
+html {
+  box-sizing: border-box;
+  font: {
+    size: 16px;
+    font-family: sans-serif;
+  }
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.ToDo {
+  margin: 2rem auto;
+  width: 80%;
+  max-width: 768px;
+  background-color: steelblue;
+  color: #fff;
+}
+
+.Task {
+  display: block;
+  padding: .5rem;
+  width: 100%;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  color: steelblue;
+}
+
+.List {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin-top: 1rem;
+  
+  &-item {
+    display: flex;
+    align-items: center;
+    line-height: 2;
+    font-size: 1.25rem;
+    background-color: steelblue;
+  }
+
+  &-item:hover {
+    background-color: deepskyblue;
+    transition: all .3s ease-in;
+  }
+
+  &-checkbox {
+    width: 10%;
+    cursor: pointer;
+    transform: scale(1.5);
+  }
+
+  &-label {
+    width: calc(90% - 2.5rem);
+    cursor: pointer;
+  }
+
+  &-label:focus {
+    border: thin solid white;
+    outline: thin solid white;
+  }
+
+  &-removeLink {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 100%;
+    color: firebrick;
+    text-decoration: none;
+    transform: scale(.75);
+    transition: all .3s ease-in;
+  }
+
+  &-removeLink:hover {
+    background-color: firebrick;
+    color: white;
+  }
+}
+
+.complete {
+  order: 1;
+  background-color: lightblue;
+
+  & label {text-decoration: line-through;}
+}

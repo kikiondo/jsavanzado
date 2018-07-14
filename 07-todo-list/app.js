@@ -4,7 +4,7 @@ import favicon from 'serve-favicon'
 import sassMiddleware from 'node-sass-middleware'
 import routes from './src/app/routes'
 
-const env = 'production' // development
+const env = 'development' // development
 const port = process.env.PORT || 3000
 const publicDir = `${__dirname}/public`
 const viewDir = `${__dirname}/src/views`

@@ -1,0 +1,8 @@
+extends includes/layout.pug
+block metatags
+  title= title
+  meta(name="description", content=description)
+block content
+  main.ToDo
+    input#task.Task(type="text", placeholder="Tarea....", spellcheck)
+    ul#list.List

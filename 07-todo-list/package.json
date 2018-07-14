@@ -1,0 +1,37 @@
+{
+  "name": "workflow-isomorfico",
+  "version": "1.0.0",
+  "description": "Boilerplate Isomórfico con JavaScript",
+  "main": "package.json",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon --watch src -e pug,scss,js,json --exec babel-node server.js",
+    "watchify": "watchify ./src/js/index.js -d -o ./public/script.js -t [ babelify --presets [ env ] ] -v",
+    "browserify": "browserify ./src/js/index.js -d -o ./public/script.js -t [ babelify --presets [ env ] ]",
+    "uglify": "uglifyjs ./public/script.js -c -o ./public/script.js",
+    "autoprefixer": "postcss -u autoprefixer --autoprefixer.browsers \"> 5%, ie 10\" -r ./public/style.css",
+    "start": "npm run watchify | npm run serve",
+    "build": "npm run browserify && npm run uglify && npm run autoprefixer && babel-node server.js"
+  },
+  "author": "Jonathan MirCha <jonmircha@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "ack-reload": "^2.0.6",
+    "autoprefixer": "^7.1.1",
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.5.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.3.0",
+    "node-sass-middleware": "^0.11.0",
+    "nodemon": "^1.11.0",
+    "postcss": "^6.0.23",
+    "postcss-cli": "^5.0.1",
+    "pug": "^2.0.0-rc.1",
+    "serve-favicon": "^2.4.3",
+    "uglify": "^0.1.5",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
